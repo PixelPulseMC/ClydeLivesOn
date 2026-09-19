@@ -1,52 +1,46 @@
-# Clyde
-Recreation of Discord's cancelled AI chatbot.
+# Clyde (Clyde Lives On)
+Clyde Dream is a Discord AI companion built to bring back the familiar, seamless interaction of Discord's original native Clyde bot. Powered by Gemini, Clyde auto-replies directly within assigned text channels without requiring rigid slash commands for every single interaction.Features
+ * Channel Auto-Response: Automatically listens and responds to standard messages in assigned channels.
+ * Gemini AI Integration: Utilizes Google's Gemini models for conversational text generation.
+ * Lightweight & Portable: Designed to run in lightweight environments, including self-hosted mobile setups via Termux.
+Quick Setup Guide
+1. Prerequisites
+ * Python 3.10+
+ * A Discord Bot Token (via Discord Developer Portal)
+ * A Gemini API Key (via Google AI Studio)
+2. Installation
+Clone the repository and install the required dependencies:
+git clone https://github.com/PixelPulseMC/ClydeLivesOn.git
+cd ClydeLivesOn
+pip install -r requirements.txt
 
-## Information
-#### Name
-This bot can be named however you like, we don't recommend using `Clyde`, as Discord can strike your bot down for impersonation. Use a unique name.
+3. Environment Configuration
+Create a .env file in the root directory and add your environment variables:
+# Core API Keys
+DISCORD_TOKEN=your_discord_bot_token_here
+GEMINI_API_KEY=your_gemini_api_key_here
 
-#### Programming Languages
-Clyde uses Python for the AI magic we do on it.
+# Database Configuration
+STATS_DB=stats.db
+LOGS_DB=logs.db
 
-#### AI Models
-Clyde uses a selection of a lot of models from Google, Meta, Mistral, DeepSeek and many more, you can pick any one you like.
+# Dummy Variables (Bypasses unused legacy modules)
+GROQ_API_TOKEN=unused
+IMAGE_GEN_TOKEN=unused
 
-#### Image Generation
-Clyde can now generate images, provided by [Image Router](https://ir.myqa.cc). Provide it an instruction, and it'll try its best to follow.
+> Security Note: Never commit your .env file or expose your actual API keys and tokens in public repositories. Keep .env added to your .gitignore.
+> 
+4. Setting Up Auto-Reply Channel
+To bind Clyde to a specific channel:
+ * Enable Developer Mode in your Discord settings.
+ * Right-click / long-press your target channel and select Copy Channel ID.
+ * Update the AUTO_CHANNEL_ID inside bot/events.py with your channel ID:
+AUTO_CHANNEL_ID = 123456789012345678  # Replace with your copied channel ID
 
-### Pricing
-Clyde supports the free plans of Groq and Gemini APIs, as well as the Image Router API. However, Image Router requires a one-time deposit to activate the free plan.<br>
-Clyde currently uses the billed plans of said services, however most features should work on the free plans too.
+5. Running the Bot
+Start the bot locally:
+python main.py
 
-### Usage Allowance
-Users receive 100 tokens per week. The allowance resets weekly, does not roll over, and bot owners are exempt from the limit.
-
-Text model pricing:
-- Cheap models cost 1 token
-- Standard models cost 2 tokens
-- Expensive reasoning models cost 3 tokens
-
-Image model pricing:
-- `qwen-image-2512`: 10 tokens
-- `nano-banana` and `nano-banana-2`: 15 tokens
-- `nano-banana-pro`: 20 tokens
-
-## How to run?
-#### Steps Required
-1. Clone this repo.
-```sh
-# Clone the repo into your machine
-git clone https://github.com/ClydeReborn/Clyde
-```
-
-2. Fill in required values in `.env.example`, then rename it to `.env`.
-
-3. Run Clyde by using `python main.py`. Docker installations are also supported, use them for secure deployment.
-
-## Required OS
-* Clyde can run on a variety of operating systems, including Windows.
-* macOS systems are untested.
-
-<sub><sup>Please test it, and report it in [the issues](https://github.com/ClydeReborn/Clyde/issues/new)!</sub></sup>
-
-### Enjoy!
+Credits & License
+ * Created and maintained by the PixelPulse team & Vadex Studios.
+ * Built on top of the hikari and lightbulb Discord frameworks for Python.
