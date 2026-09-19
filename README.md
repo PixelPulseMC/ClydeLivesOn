@@ -1,5 +1,5 @@
 # Clyde (Clyde Lives On)
-Clyde Dream is a Discord AI companion built to bring back the familiar, seamless interaction of Discord's original native Clyde bot. Powered by Gemini, Clyde auto-replies directly within assigned text channels without requiring rigid slash commands for every single interaction.Features
+Clyde Dream is a Discord AI companion built to replicate Discord's original Clyde chatbot. Powered by Gemini, Clyde auto-replies directly within assigned text channels without requiring rigid slash commands for every single interaction.Features
  * Channel Auto-Response: Automatically listens and responds to standard messages in assigned channels.
  * Gemini AI Integration: Utilizes Google's Gemini models for conversational text generation.
  * Lightweight & Portable: Designed to run in lightweight environments, including self-hosted mobile setups via Termux.
